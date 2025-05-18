@@ -2,21 +2,21 @@
 
 ## Índice
 
-1.  [Introducción](https://www.google.com/search?q=%23introducci%C3%B3n)
-2.  (\#parte-1-resolución-detallada-del-examentipo1pdf)
-      * [1.1. Análisis del Enunciado y Estructura del Proyecto](https://www.google.com/search?q=%2311-an%C3%A1lisis-del-enunciado-y-estructura-del-proyecto)
-      * (\#12-diseño-de-interfaces-pregunta-1)
-      * (\#13-implementación-de-selección-de-imágenes-pregunta-2)
-      * [1.4. Gestión del Usuario Autenticado con Preferencias (Pregunta 3)](https://www.google.com/search?q=%2314-gesti%C3%B3n-del-usuario-autenticado-con-preferencias-pregunta-3)
-      * (\#15-integración-con-base-de-datos-sqlite-pregunta-4)
-      * [1.6. Manejo de Errores y Feedback al Usuario](https://www.google.com/search?q=%2316-manejo-de-errores-y-feedback-al-usuario)
-      * [1.7. Fragmentos de Código Clave](https://www.google.com/search?q=%2317-fragmentos-de-c%C3%B3digo-clave)
-3.  (\#parte-2-guía-metodológica-detallada-para-afrontar-y-realizar-el-examen)
-      * [2.1. Estrategia General y Preparación Previa al Examen](https://www.google.com/search?q=%2321-estrategia-general-y-preparaci%C3%B3n-previa-al-examen)
-      * (\#22-durante-el-examen-enfoque-paso-a-paso)
-      * (\#23-proceso-de-desarrollo-práctico-usando-examentipo1-como-caso-de-estudio)
-      * [2.4. Errores Comunes y Consejos Finales](https://www.google.com/search?q=%2324-errores-comunes-y-consejos-finales)
-4.  [Conclusión](https://www.google.com/search?q=%23conclusi%C3%B3n)
+1. [Introducción](#introducción)
+2. [Parte 1: Resolución Detallada del "ExamenTipo1.pdf"](#parte-1-resolución-detallada-del-examentipo1pdf)
+   * [1.1. Análisis del Enunciado y Estructura del Proyecto](#11-análisis-del-enunciado-y-estructura-del-proyecto)
+   * [1.2. Diseño de Interfaces (Pregunta 1)](#12-diseño-de-interfaces-pregunta-1)
+   * [1.3. Implementación de Selección de Imágenes (Pregunta 2)](#13-implementación-de-selección-de-imágenes-pregunta-2)
+   * [1.4. Gestión del Usuario Autenticado con Preferencias (Pregunta 3)](#14-gestión-del-usuario-autenticado-con-preferencias-pregunta-3)
+   * [1.5. Integración con Base de Datos SQLite (Pregunta 4)](#15-integración-con-base-de-datos-sqlite-pregunta-4)
+   * [1.6. Manejo de Errores y Feedback al Usuario](#16-manejo-de-errores-y-feedback-al-usuario)
+   * [1.7. Fragmentos de Código Clave](#17-fragmentos-de-código-clave)
+3. [Parte 2: Guía Metodológica Detallada para Afrontar y Realizar el Examen](#parte-2-guía-metodológica-detallada-para-afrontar-y-realizar-el-examen)
+   * [2.1. Estrategia General y Preparación Previa al Examen](#21-estrategia-general-y-preparación-previa-al-examen)
+   * [2.2. Durante el Examen: Enfoque Paso a Paso](#22-durante-el-examen-enfoque-paso-a-paso)
+   * [2.3. Proceso de Desarrollo Práctico (usando "ExamenTipo1" como caso de estudio)](#23-proceso-de-desarrollo-práctico-usando-examentipo1-como-caso-de-estudio)
+   * [2.4. Errores Comunes y Consejos Finales](#24-errores-comunes-y-consejos-finales)
+4. [Conclusión](#conclusión)
 
 ## Introducción
 
@@ -1159,20 +1159,27 @@ El día del examen, una estrategia bien definida puede marcar una gran diferenci
           * Subtarea 1.2: Crear `activity_registro.xml`.
           * Subtarea 1.3: Crear `activity_principal.xml`.
           * Subtarea 1.4: Verificar `inputType` en todos los `EditText`.
-      * **Pregunta 2 (Selección Imagen):**
+      * **Pregunta 2 (Selección de Imágenes):**
           * Subtarea 2.1: Crear `AvatarSelectionActivity.kt` y `activity_avatar_selection.xml`.
           * Subtarea 2.2: Implementar la lógica para tener las imágenes de muestra en `filesDir`.
           * Subtarea 2.3: Crear `AvatarAdapter.kt` y `list_item_avatar.xml`.
           * Subtarea 2.4: Implementar la lectura de imágenes con `Streams` en el adapter.
           * Subtarea 2.5: Implementar la lógica de `ActivityResultLauncher` para la comunicación.
-      * Y así sucesivamente para las demás preguntas.
+      * **Pregunta 3 (Gestión de Usuario con Preferencias):**
+          * Subtarea 3.1: Implementar el guardado del usuario en `SharedPreferences` tras el login.
+          * Subtarea 3.2: Implementar la recuperación del usuario desde `SharedPreferences` en `PrincipalActivity`.
+          * Subtarea 3.3: Implementar el cierre de sesión y la limpieza de `SharedPreferences`.
+      * **Pregunta 4 (Integración con Base de Datos SQLite):**
+          * Subtarea 4.1: Crear la clase `UserDbHelper` y definir la tabla `Usuarios`.
+          * Subtarea 4.2: Implementar las funciones CRUD en `UserDbHelper`.
+          * Subtarea 4.3: Integrar el registro y login de usuario con la base de datos.
 
   * **Interpretación Precisa de los Requisitos:**
     Prestar atención EXTREMA a los detalles del enunciado.
 
       * Si se pide "guardar el **nombre del fichero** de imagen en `SharedPreferences`", no se debe guardar el `Bitmap` entero o la ruta completa si no es lo especificado.
       * Si se pide "usar `Streams` para leer la imagen desde el almacenamiento interno", se debe implementar de esa manera, incluso si se conoce otra forma que podría parecer más rápida (a menos que el tiempo apremie críticamente y se justifique).
-      * Si se especifican nombres de clases, paquetes, métodos, variables o IDs de vistas, es fundamental usarlos tal cual. A menudo, parte de la evaluación incluye seguir estas especificaciones.
+      * Si se especifican nombres de clases, paquetes, métodos, variables o IDs de vistas, es fundamental usarlos tal cual. Los correctores pueden tener scripts o buscar específicamente esos nombres.
       * Fijarse en las notas aclaratorias o requisitos adicionales (ej. "mostrar mensajes al usuario en caso de error o éxito").
 
     Una buena gestión del tiempo y una comprensión clara y detallada de los requisitos desde el principio son tan importantes como el conocimiento técnico en sí. Dividir problemas grandes en partes más pequeñas no solo facilita su resolución, sino que también reduce la sensación de agobio y permite un progreso más estructurado y medible. Es recomendable practicar esta fase de análisis y planificación con otros enunciados de examen o problemas de programación si es posible.
@@ -1264,7 +1271,7 @@ Una vez planificado, se inicia el desarrollo en Android Studio.
             2.  Lanzar la `Activity` que devuelve el resultado (ej. `AvatarSelectionActivity`) usando el método `launch()` del launcher.
             3.  En la `Activity` que devuelve el resultado, crear un `Intent` con los datos de vuelta, llamar a `setResult(Activity.RESULT_OK, intentDeVuelta)` y luego a `finish()`.
             4.  Procesar el resultado en el callback del launcher en la `Activity` que llamó.
-          * **`Streams` (para archivos):** Siempre cerrar los streams (`FileInputStream`, `FileOutputStream`, etc.) para liberar recursos y evitar fugas. La forma más segura es usar un bloque `finally` o, preferiblemente en Kotlin, la función de extensión `use {... }` que cierra el stream automáticamente, incluso si ocurren excepciones.
+          * **`Streams` (para archivos):** Siempre cerrar los streams (`FileInputStream`, `FileOutputStream`, etc.) para liberar recursos y evitar fugas. La forma más segura es usar un bloque `finally` o, preferiblemente en Kotlin, la función de extensión `use` que cierra el stream automáticamente, incluso si ocurren excepciones.
             ```kotlin
             // FileInputStream(file).use { fis ->
             //    val bitmap = BitmapFactory.decodeStream(fis)
@@ -1361,6 +1368,3 @@ Los puntos más importantes a retener son:
   * **Atención al Detalle:** Seguir las especificaciones del examen (nombres, tecnologías) y proporcionar un feedback claro al usuario y un manejo robusto de errores son aspectos que demuestran profesionalismo y competencia.
 
 Se reitera la confianza en la capacidad del estudiante para prepararse adecuadamente y superar este desafío. El éxito en el examen del 5 de junio dependerá en gran medida de la dedicación al estudio y la aplicación activa de los conceptos y estrategias aquí presentados. Este informe es una guía extensa y una herramienta de apoyo; la clave final reside en el esfuerzo personal y la práctica diligente. ¡Mucho ánimo y éxito\!
-
-```
-```
